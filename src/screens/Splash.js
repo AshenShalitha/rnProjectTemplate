@@ -10,6 +10,10 @@ const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({ $rem: entireScreenWidth / 380 });
 
 class Splash extends Component {
+
+    componentDidMount() {
+
+    }
     render() {
         return (
             <View style={styles.mainContainer}>

@@ -1,14 +1,14 @@
 import {
-    SAMPLE_TYPE, //delete this line for a new project
+    USER_DETAILS_SAVED, //delete this line for a new project
 } from '../types';
 
 const INITIAL_STATE = {
-    sample: '', //delete this line for a new project
+    user: {}
 };
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case SAMPLE_TYPE:
+        case USER_DETAILS_SAVED:
             return { ...state, sample: action.payload }; //delete this case for a new project
         default:
             return state;

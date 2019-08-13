@@ -1,11 +1,11 @@
 import {
-    SAMPLE_TYPE,    //delete this line for a new project
+    USER_DETAILS_SAVED,    //delete this line for a new project
 } from '../types';
 
 //sample action
-export const sampleAction = value => {
+export const saveUser = value => {
     return {
-        type: SAMPLE_TYPE,
+        type: USER_DETAILS_SAVED,
         payload: value
     };
 };

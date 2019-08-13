@@ -3,8 +3,8 @@ import { ActivityIndicator, Alert, Text, View, Button } from 'react-native';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin';
 import firebase from 'react-native-firebase';
 import AsyncStorage from '@react-native-community/async-storage';
-
 import NavigationService from '../../services/NavigationService';
+import Config from '../../config/Config';
 
 export default class GSignIn extends Component {
     state = {
@@ -15,9 +15,7 @@ export default class GSignIn extends Component {
 
     constructor() {
         super();
-        GoogleSignin.configure({
-            webClientId: '1031663605715-m74891ags1jiltipo6hv3jqj7g4l1pdj.apps.googleusercontent.com'
-        });
+        Config.configGoogleClient();
     }
 
     componentDidMount() {

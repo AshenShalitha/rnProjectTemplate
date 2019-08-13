@@ -10,6 +10,8 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { GoogleSignin, statusCodes } from 'react-native-google-signin';
 import AsyncStorage from '@react-native-community/async-storage';
 
+import Config from '../../config/Config';
+
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({ $rem: entireScreenWidth / 380 });
 
@@ -23,9 +25,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        GoogleSignin.configure({
-            webClientId: '1031663605715-m74891ags1jiltipo6hv3jqj7g4l1pdj.apps.googleusercontent.com'
-        });
+        Config.configGoogleClient();
         AsyncStorage.getItem('user').then(user => {
             this.setState({ user: JSON.parse(user) });
             console.log(`User details ${JSON.parse(user).email}`);

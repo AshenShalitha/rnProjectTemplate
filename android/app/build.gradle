@@ -135,11 +135,23 @@ android {
             }
         }
     }
+
+    packagingOptions
+            {
+                exclude 'META-INF/DEPENDENCIES'
+                exclude 'META-INF/NOTICE'
+                exclude 'META-INF/LICENSE'
+                exclude 'META-INF/LICENSE.txt'
+                exclude 'META-INF/NOTICE.txt'
+                exclude 'META-INF/ECLIPSE_.SF'
+                exclude 'META-INF/ECLIPSE_.RSA'
+            }
 }
 
 dependencies {
     implementation project(':@react-native-community_async-storage')
     implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-applozic-chat')
     implementation fileTree(dir: "libs", include: ["*.jar"])
 //    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules

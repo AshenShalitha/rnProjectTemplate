@@ -8,6 +8,7 @@ import NavigationService from './services/NavigationService';
 import { MainSwitchNavigator } from './navigators/MainSwitchNavigator';
 
 export default class App extends Component {
+  
   render() {
     return (
       <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>

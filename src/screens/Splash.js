@@ -5,6 +5,8 @@ import {
     Text
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import Background from '../components/Background';
+import Logo from '../components/Logo';
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({ $rem: entireScreenWidth / 380 });
@@ -14,13 +16,13 @@ class Splash extends Component {
     componentDidMount() {
         setTimeout(() => {
             this.props.navigation.navigate('App');
-        }, 1000);
+        }, 3000);
     }
     render() {
         return (
-            <View style={styles.mainContainer}>
-                <Text>Splash</Text>
-            </View>
+            <Background>
+                <Logo size={180} />
+            </Background>
         );
     }
 }
